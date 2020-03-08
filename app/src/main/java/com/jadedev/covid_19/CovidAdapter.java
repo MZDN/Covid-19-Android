@@ -38,31 +38,11 @@ public class CovidAdapter extends RecyclerView.Adapter<CovidAdapter.ViewHolder> 
         holder.latest.setText("Latest number of cases: " + String.valueOf(countryCovid.getLatest()));
 
         String tmp = String.valueOf(countryCovid.getProvince());
-        if (tmp == "" || tmp.isEmpty()) {
-            tmp = "---";
+        if (tmp.equals("nan") || tmp.isEmpty()) {
+            tmp = "Unspecified province";
         }
         holder.province.setText("Province: " + tmp);
         Picasso.get().load("https://www.countryflags.io/" + countryCovid.getCountry_code().toLowerCase() + "/flat/64.png").into(holder.countryFlag);
-    }
-
-    public void filter(String text) {
-
-        List<CountryCovid> itemsCopy;
-
-        itemsCopy = list;
-
-        list.clear();
-        if (text.isEmpty()) {
-            list.addAll(itemsCopy);
-        } else {
-            text = text.toLowerCase();
-            for (CountryCovid item : itemsCopy) {
-                if (item.getCountry().toLowerCase().contains(text) || item.getProvince().toLowerCase().contains(text)) {
-                    list.add(item);
-                }
-            }
-        }
-        notifyDataSetChanged();
     }
 
     @Override

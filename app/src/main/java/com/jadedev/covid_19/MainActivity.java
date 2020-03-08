@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     private List<CountryCovid> countryCovidList;
     private CovidAdapter adapter;
 
-    private String url = "https://coronavirus-tracker-api.herokuapp.com/all";
+    private String url = "https://covid19api.herokuapp.com/";
 
     private int order_list = -1;
     private int data_type = -1;
@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity {
                     Collections.sort(countryCovidList, new Comparator<CountryCovid>() {
                         @Override
                         public int compare(CountryCovid lhs, CountryCovid rhs) {
-                            if (lhs.getLatest() > rhs.getLatest()) {
+                            if (lhs.getLatest() >= rhs.getLatest()) {
                                 return -1;
                             } else {
                                 return 1;
