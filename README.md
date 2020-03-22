@@ -27,6 +27,4 @@ The application is available to the public strictly for informational, education
 
 ## Screenshots
 
-![](./Scsht1.jpg)
-![](./Scsht2.jpg)
-![](./Scsht3.jpg)
+![](./Scsht1.jpg) ![](./Scsht2.jpg) ![](./Scsht3.jpg)
